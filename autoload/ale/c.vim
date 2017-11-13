@@ -83,6 +83,8 @@ function! ale#c#FindCompileCommands(buffer) abort
 
             if filereadable(l:c_build_dir . '/compile_commands.json')
                 return l:c_build_dir
+            elseif filereadable(l:c_build_dir . '/compile_flags.txt')
+                return l:c_build_dir
             endif
         endfor
     endfor
